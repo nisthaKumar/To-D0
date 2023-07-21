@@ -1,5 +1,10 @@
 import functions
 import streamlit as st
+import os
+
+if not os.path.exists('todos.txt'):
+    with open('todos.txt','w') as file:
+        pass
 
 todos = functions.get_todos()
 def add_todo():
@@ -24,4 +29,4 @@ st.text_input(label = 'Add new todo', placeholder='Enter a new todo',
                on_change = add_todo,
                key='new_todo')
 
-st.session_state
+#st.session_state
